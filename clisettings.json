@@ -7,6 +7,7 @@
   "applicationDirectory": "C:\\Projects\\TimeOffManager\\src\\TimeOffManager.Api",
   "infrastructureDirectory": "C:\\Projects\\TimeOffManager\\src\\TimeOffManager.Api",
   "apiDirectory": "C:\\Projects\\TimeOffManager\\src\\TimeOffManager.Api",
+  "appDirectories": ["C:\\Projects\\TimeOffManager\\src\\TimeOffManager.App"],
   "path": "C:\\Projects\\TimeOffManager",
   "dbContext": "TimeOffManagerDbContext",
   "sourceFolder": "src",

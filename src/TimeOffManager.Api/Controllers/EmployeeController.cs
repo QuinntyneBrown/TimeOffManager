@@ -45,7 +45,14 @@ namespace TimeOffManager.Api.Controllers
         [ProducesResponseType(typeof(CreateEmployee.Response), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<CreateEmployee.Response>> Create([FromBody]CreateEmployee.Request request)
             => await _mediator.Send(request);
-        
+
+        [HttpPost("range", Name = "CreateEmployeesRoute")]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        [ProducesResponseType(typeof(ProblemDetails), (int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType(typeof(CreateEmployees.Response), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<CreateEmployees.Response>> CreateRange([FromBody] CreateEmployees.Request request)
+            => await _mediator.Send(request);
+
         [HttpGet("page/{pageSize}/{index}", Name = "GetEmployeesPageRoute")]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         [ProducesResponseType(typeof(ProblemDetails), (int)HttpStatusCode.BadRequest)]
@@ -56,8 +63,8 @@ namespace TimeOffManager.Api.Controllers
         [HttpPut(Name = "UpdateEmployeeRoute")]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         [ProducesResponseType(typeof(ProblemDetails), (int)HttpStatusCode.BadRequest)]
-        [ProducesResponseType(typeof(UpdateEmployee.Response), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<UpdateEmployee.Response>> Update([FromBody]UpdateEmployee.Request request)
+        [ProducesResponseType(typeof(UpdateEmployeeName.Response), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<UpdateEmployeeName.Response>> Update([FromBody]UpdateEmployeeName.Request request)
             => await _mediator.Send(request);
         
         [HttpDelete("{employeeId}", Name = "RemoveEmployeeRoute")]

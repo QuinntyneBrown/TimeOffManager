@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { SixMonthReviewPopupComponent } from './six-month-review-popup.component';
 
 
 
 @NgModule({
   declarations: [
-    NotFoundComponent
+    SixMonthReviewPopupComponent
   ],
   imports: [
     CommonModule
   ]
 })
-export class NotFoundModule { }
+export class SixMonthReviewPopupModule { }

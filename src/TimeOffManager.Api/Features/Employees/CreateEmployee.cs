@@ -39,13 +39,19 @@ namespace TimeOffManager.Api.Features
         
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                var employee = new Employee();
+                var employee = new Employee(
+                    request.Employee.Name, 
+                    request.Employee.Email,
+                    request.Employee.HireDate,
+                    request.Employee.SixMonthReviewRequired,
+                    request.Employee.Skill
+                    );
                 
                 _context.Employees.Add(employee);
                 
                 await _context.SaveChangesAsync(cancellationToken);
                 
-                return new Response()
+                return new ()
                 {
                     Employee = employee.ToDto()
                 };

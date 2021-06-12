@@ -5,24 +5,25 @@ using System.Threading.Tasks;
 using TimeOffManager.Api.Core;
 using TimeOffManager.Api.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace TimeOffManager.Api.Features
 {
-    public class UpdateEmployee
+    public class UpdateEmployeeName
     {
         public class Validator: AbstractValidator<Request>
         {
             public Validator()
             {
-                RuleFor(request => request.Employee).NotNull();
-                RuleFor(request => request.Employee).SetValidator(new EmployeeValidator());
-            }
-        
+                RuleFor(request => request.EmployeeId).NotNull();
+                RuleFor(request => request.Name).NotNull();
+            }        
         }
 
         public class Request: IRequest<Response>
         {
-            public EmployeeDto Employee { get; set; }
+            public Guid EmployeeId { get; set; }
+            public string Name { get; set; }
         }
 
         public class Response: ResponseBase
@@ -39,11 +40,13 @@ namespace TimeOffManager.Api.Features
         
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                var employee = await _context.Employees.SingleAsync(x => x.EmployeeId == request.Employee.EmployeeId);
+                var employee = await _context.Employees.SingleAsync(x => x.EmployeeId == request.EmployeeId);
+
+                employee.UpdateName(request.Name);
                 
                 await _context.SaveChangesAsync(cancellationToken);
                 
-                return new Response()
+                return new ()
                 {
                     Employee = employee.ToDto()
                 };

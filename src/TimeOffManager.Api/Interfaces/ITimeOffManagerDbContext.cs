@@ -1,7 +1,7 @@
-using TimeOffManager.Api.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
 using System.Threading;
+using System.Threading.Tasks;
+using TimeOffManager.Api.Models;
 
 namespace TimeOffManager.Api.Interfaces
 {
