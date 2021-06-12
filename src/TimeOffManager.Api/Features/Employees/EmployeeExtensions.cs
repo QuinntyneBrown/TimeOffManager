@@ -9,9 +9,11 @@ namespace TimeOffManager.Api.Features
         {
             return new ()
             {
-                EmployeeId = employee.EmployeeId
+                EmployeeId = employee.EmployeeId,
+                Name = employee.Name,
+                Email = employee.Email,
+                SixMonthReviewRequired = employee.SixMonthReviewRequired
             };
-        }
-        
+        }        
     }
 }

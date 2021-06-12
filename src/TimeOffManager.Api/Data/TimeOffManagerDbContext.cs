@@ -7,6 +7,7 @@ namespace TimeOffManager.Api.Data
     public class TimeOffManagerDbContext: DbContext, ITimeOffManagerDbContext
     {
         public DbSet<Employee> Employees { get; private set; }
+        public DbSet<DevelopmentTeam> DevelopmentTeams { get; private set; }
         public TimeOffManagerDbContext(DbContextOptions options)
             :base(options) { }
 
