@@ -1,0 +1,16 @@
+{
+  "domainNamespace": "TimeOffManager.Api",
+  "applicationNamespace": "TimeOffManager.Api",
+  "infrastructureNamespace": "TimeOffManager.Api",
+  "apiNamespace": "TimeOffManager.Api",
+  "domainDirectory": "C:\\Projects\\TimeOffManager\\src\\TimeOffManager.Api",
+  "applicationDirectory": "C:\\Projects\\TimeOffManager\\src\\TimeOffManager.Api",
+  "infrastructureDirectory": "C:\\Projects\\TimeOffManager\\src\\TimeOffManager.Api",
+  "apiDirectory": "C:\\Projects\\TimeOffManager\\src\\TimeOffManager.Api",
+  "path": "C:\\Projects\\TimeOffManager",
+  "dbContext": "TimeOffManagerDbContext",
+  "sourceFolder": "src",
+  "resources": [
+    "Employee"
+  ]
+}
